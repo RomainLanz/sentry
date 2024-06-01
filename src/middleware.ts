@@ -21,8 +21,6 @@ export default class SentryMiddleware {
     scope.setTag('url', ctx.request.url())
 
     ctx.sentry = scope
-
-    // @ts-expect-error - SentrySDK Scope interface seems broken
     ctx.containerResolver.bindValue(Sentry, ctx.sentry)
 
     await SentrySDK.startSpan(
