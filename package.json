@@ -18,7 +18,7 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "del-cli build",
-    "copy:templates": "copyfiles --up=1 \"stubs/**/*.stub\"  build",
+    "copy:templates": "copyfiles \"stubs/**/*.stub\" build",
     "format": "prettier --write .",
     "lint": "eslint . --ext=.ts",
     "postbuild": "npm run copy:templates",
