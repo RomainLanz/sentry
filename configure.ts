@@ -19,7 +19,7 @@ export async function configure(command: Configure) {
   /**
    * Publish config file
    */
-  await codemods.makeUsingStub(stubsRoot, 'config/session.stub', {})
+  await codemods.makeUsingStub(stubsRoot, 'config/sentry.stub', {})
 
   /**
    * Define environment variables
