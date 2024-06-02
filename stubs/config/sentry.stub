@@ -20,13 +20,13 @@ export default defineConfig({
   /**
    * The DSN of the project
    */
-  dsn: env('SENTRY_DSN'),
+  dsn: env.get('SENTRY_DSN'),
 
   /**
    * Additional integrations to use with the Sentry SDK
    * @see https://docs.sentry.io/platforms/javascript/guides/node/configuration/integrations/#available-integrations
    */
-  integrations: []
+  integrations: [],
 
   /**
    * The sample rate of traces to send to Sentry
