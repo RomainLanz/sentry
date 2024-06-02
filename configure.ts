@@ -24,7 +24,7 @@ export async function configure(command: Configure) {
   /**
    * Define environment variables
    */
-  await codemods.defineEnvVariables({ SENTRY_DSN: '<your_dns_url>' })
+  await codemods.defineEnvVariables({ SENTRY_DSN: '<your_dsn_url>' })
   /**
    * Define environment variables validations
    */
