@@ -83,23 +83,23 @@ You can assign user context to the Sentry SDK by calling the `setUser` method on
 
 ```ts
 export default class SilentAuthMiddleware {
-	async handle(ctx: HttpContext, next: NextFn) {
+  async handle(ctx: HttpContext, next: NextFn) {
     // We are authenticating the user
     await ctx.auth.check()
 
     // If the user is authenticated, we assign the user context to Sentry
-		if (ctx.auth.isAuthenticated) {
+    if (ctx.auth.isAuthenticated) {
       const user = ctx.auth.getUserOrFail()
       
-			ctx.sentry.setUser({
-				id: user.id,
-				email: user.email,
-				username: user.username,
-			});
-		}
-
-		return await next();
-	}
+      ctx.sentry.setUser({
+        id: user.id, 
+        email: user.email, 
+        username: user.username,
+      });
+    }
+    
+    return await next();
+  }
 }
 ```
 
