@@ -18,8 +18,10 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "del-cli build",
+    "copy:templates": "copyfiles --up=1 \"stubs/**/*.stub\"  build",
     "format": "prettier --write .",
     "lint": "eslint . --ext=.ts",
+    "postbuild": "npm run copy:templates",
     "prepublishOnly": "npm run build",
     "release": "npx release-it",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,6 +38,7 @@
     "@adonisjs/prettier-config": "^1.3.0",
     "@adonisjs/tsconfig": "^1.3.0",
     "@types/node": "^20.13.0",
+    "copyfiles": "^2.4.1",
     "del-cli": "^5.1.0",
     "eslint": "^8.57.0",
     "prettier": "^3.3.0",
