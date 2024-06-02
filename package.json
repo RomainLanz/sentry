@@ -1,7 +1,7 @@
 {
   "name": "@rlanz/sentry",
   "description": "A wrapper around the Sentry SDK to make it easier to use in a AdonisJS application",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "node": ">= 20.11.0"
   },
