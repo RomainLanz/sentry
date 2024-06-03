@@ -38,7 +38,7 @@ export default class HelloController {
 }
 ```
 
-Since the SDK is also added to the `IoC Container`, you can also use it in your services.
+Since the SDK is also added to the `IoC Container`, you can also use it in your services. If you are inside a request context, the SDK injected will be scoped to it.
 
 ```ts
 import { inject } from '@adonisjs/core'
