@@ -56,9 +56,6 @@ export class GreetingService {
 }
 ```
 
-> [!NOTE]
-> The SDK is added to the IoC Container through a middleware, so it is not available when calling your services outside of a request context.
-
 ### Capturing Errors
 
 You can capture errors by calling the `captureException` method on the SDK instance inside your exception handler.

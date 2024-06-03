@@ -1,4 +1,5 @@
-import * as Sentry from '@sentry/node'
+import * as SentrySDK from '@sentry/node'
+import { Sentry } from '../src/sentry.js'
 import type { ApplicationService } from '@adonisjs/core/types'
 import type { SentryConfig } from '../src/types/main.js'
 
@@ -9,7 +10,9 @@ export default class MonitoringProvider {
     const config = this.app.config.get<SentryConfig>('sentry', {})
 
     if (config.enabled) {
-      Sentry.init(config)
+      SentrySDK.init(config)
     }
+
+    this.app.container.bind(Sentry, () => new SentrySDK.Scope())
   }
 }
