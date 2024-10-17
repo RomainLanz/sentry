@@ -9,7 +9,7 @@
 
 import * as SentrySDK from '@sentry/node'
 import { Sentry } from './sentry.js'
-import { HttpContext } from '@adonisjs/core/http'
+import type { HttpContext } from '@adonisjs/core/http'
 import type { NextFn } from '@adonisjs/core/types/http'
 
 export default class SentryMiddleware {
@@ -21,7 +21,7 @@ export default class SentryMiddleware {
     scope.setTag('url', ctx.request.url())
 
     ctx.sentry = scope
-    ctx.containerResolver.bindValue(Sentry, ctx.sentry)
+    ctx.containerResolver.bindValue(Sentry, scope)
 
     await SentrySDK.startSpan(
       {
@@ -37,7 +37,7 @@ export default class SentryMiddleware {
 }
 
 declare module '@adonisjs/core/http' {
-  interface HttpContext {
+  export interface HttpContext {
     sentry: SentrySDK.Scope
   }
 }
