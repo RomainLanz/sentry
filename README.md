@@ -107,7 +107,7 @@ Sentry provides multiple integrations to enhance the data captured by the SDK. Y
 For example, if you want to add profiling to your application, you can add the `Profiler` integration.
 
 ```sh
-npm install @sentry/profiling-node@7
+npm install @sentry/profiling-node
 ```
 
 ```ts
