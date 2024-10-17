@@ -13,6 +13,12 @@ export default class MonitoringProvider {
       SentrySDK.init(config)
     }
 
-    this.app.container.bind(Sentry, () => new SentrySDK.Scope())
+    this.app.container.bind(Sentry, () => {
+      const client = SentrySDK.getClient()
+      const scope = new SentrySDK.Scope()
+      scope.setClient(client)
+
+      return scope
+    })
   }
 }
