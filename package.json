@@ -16,14 +16,14 @@
     "./provider": "./build/providers/sentry_provider.js"
   },
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "yarn clean && tsc",
     "clean": "del-cli build",
     "copy:templates": "copyfiles \"stubs/**/*.stub\" build",
     "format": "prettier --write .",
     "lint": "eslint . --ext=.ts",
-    "postbuild": "npm run copy:templates",
-    "prepublishOnly": "npm run build",
-    "release": "npx release-it",
+    "postbuild": "yarn copy:templates",
+    "prepublishOnly": "yarn build",
+    "release": "release-it",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typecheck": "tsc --noEmit"
   },
@@ -71,5 +71,6 @@
       "releaseName": "v${version}",
       "web": true
     }
-  }
+  },
+  "packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728"
 }
