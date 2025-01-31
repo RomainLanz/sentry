@@ -7,6 +7,6 @@
  * file that was distributed with this source code.
  */
 
-import * as SentrySDK from '@sentry/node'
+import * as Sentry from '@sentry/node'
 
-export abstract class Sentry extends SentrySDK.Scope {}
+export { Sentry }

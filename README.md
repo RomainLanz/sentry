@@ -24,32 +24,31 @@ node ace add @rlanz/sentry
 
 ## Usage
 
-The package will automatically register a middleware, configure the Sentry SDK and add an instance of the SDK to the `IoC Container` and the `HttpContext`.
+The package will automatically register a middleware and configure the Sentry SDK.
 
 ```ts
 import type { HttpContext } from '@adonisjs/core/http'
+import { Sentry } from '@rlanz/sentry'
 
 export default class HelloController {
-  greet({ params, sentry, response}: HttpContext) {
-    sentry.captureMessage(`Hello, ${params.name}!`)
+  greet({ params, response}: HttpContext) {
+    Sentry.captureMessage(`Hello, ${params.name}!`)
 
     return response.ok({ message: `Hello, ${params.name}!` })
   }
 }
 ```
 
-Since the SDK is also added to the `IoC Container`, you can also use it in your services. If you are inside a request context, the SDK injected will be scoped to it.
+The SDK is automatically scoped to the current request.
 
 ```ts
 import { inject } from '@adonisjs/core'
 import { Sentry } from '@rlanz/sentry'
 
 @inject()
-export class GreetingService {
-  constructor(private sentry: Sentry) {}
-  
+export class GreetingService {  
   greet(name: string) {
-    this.sentry.captureMessage(`Hello, ${name}!`)
+    Sentry.captureMessage(`Hello, ${name}!`)
     
     return `Hello, ${name}!`
   }
@@ -58,15 +57,17 @@ export class GreetingService {
 
 ### Capturing Errors
 
-You can capture errors by calling the `captureException` method on the SDK instance inside your exception handler.
+You can capture errors by calling the `captureException` method on the SDK inside your exception handler.
 
 ```ts
+import { Sentry } from '@rlanz/sentry'
+
 export default class HttpExceptionHandler extends ExceptionHandler {
   // ...
 
   async report(error: unknown, ctx: HttpContext) {
     if (this.shouldReport(error as any)) {
-      ctx.sentry.captureException(error)
+      Sentry.captureException(error)
     }
 
     return super.report(error, ctx)
@@ -76,9 +77,11 @@ export default class HttpExceptionHandler extends ExceptionHandler {
 
 ### Assigning User Context
 
-You can assign user context to the Sentry SDK by calling the `setUser` method on the SDK instance once you are logged in.
+You can assign user context to the Sentry SDK by calling the `setUser` method on the SDK once you are logged in.
 
 ```ts
+import { Sentry } from '@rlanz/sentry'
+
 export default class SilentAuthMiddleware {
   async handle(ctx: HttpContext, next: NextFn) {
     // We are authenticating the user
@@ -88,7 +91,7 @@ export default class SilentAuthMiddleware {
     if (ctx.auth.isAuthenticated) {
       const user = ctx.auth.getUserOrFail()
       
-      ctx.sentry.setUser({
+      Sentry.setUser({
         id: user.id, 
         email: user.email, 
         username: user.username,
