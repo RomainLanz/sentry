@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import * as SentrySDK from '@sentry/node'
+import * as Sentry from '@sentry/node'
 
-export interface SentryConfig extends SentrySDK.NodeOptions {
+export interface SentryConfig extends Sentry.NodeOptions {
   /**
    * Enable or disable Sentry
    */
