@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@poppinss/utils": "^6.9.2",
-    "@sentry/node": "^8.51.0"
+    "@sentry/node": "^8.53.0"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^7.8.2",
