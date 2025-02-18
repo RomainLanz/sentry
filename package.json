@@ -29,19 +29,19 @@
   },
   "dependencies": {
     "@poppinss/utils": "^6.9.2",
-    "@sentry/node": "^8.53.0"
+    "@sentry/node": "^9.1.0"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^7.8.2",
-    "@adonisjs/core": "^6.17.1",
-    "@adonisjs/eslint-config": "^2.0.0-beta.7",
+    "@adonisjs/core": "^6.17.2",
+    "@adonisjs/eslint-config": "^2.0.0",
     "@adonisjs/prettier-config": "^1.4.0",
     "@adonisjs/tsconfig": "^1.4.0",
-    "@types/node": "^20.17.12",
+    "@types/node": "^20.17.19",
     "copyfiles": "^2.4.1",
     "del-cli": "^6.0.0",
-    "eslint": "^9.19.0",
-    "prettier": "^3.4.2",
+    "eslint": "^9.20.1",
+    "prettier": "^3.5.1",
     "release-it": "^18.1.2",
     "typescript": "^5.7.3"
   },
@@ -69,5 +69,5 @@
       "web": true
     }
   },
-  "packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728"
+  "packageManager": "yarn@4.6.0"
 }
