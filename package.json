@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@poppinss/utils": "^6.9.2",
-    "@sentry/node": "^9.1.0"
+    "@sentry/node": "^9.3.0"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^7.8.2",
@@ -40,10 +40,10 @@
     "@types/node": "^20.17.19",
     "copyfiles": "^2.4.1",
     "del-cli": "^6.0.0",
-    "eslint": "^9.20.1",
-    "prettier": "^3.5.1",
+    "eslint": "^9.21.0",
+    "prettier": "^3.5.2",
     "release-it": "^18.1.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2"
   },
   "author": "Romain Lanz <romain.lanz@pm.me>",
   "license": "MIT",
@@ -69,5 +69,5 @@
       "web": true
     }
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.7.0"
 }
