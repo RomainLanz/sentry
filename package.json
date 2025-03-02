@@ -16,12 +16,11 @@
     "./provider": "./build/providers/sentry_provider.js"
   },
   "scripts": {
-    "build": "yarn clean && tsc",
+    "build": "yarn clean && tsc && yarn copy:templates",
     "clean": "del-cli build",
     "copy:templates": "copyfiles \"stubs/**/*.stub\" --up=\"1\" build",
     "format": "prettier --write .",
     "lint": "eslint . --ext=.ts",
-    "postbuild": "yarn copy:templates",
     "prepublishOnly": "yarn build",
     "release": "release-it",
     "test": "echo \"Error: no test specified\" && exit 1",
