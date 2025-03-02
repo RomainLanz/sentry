@@ -18,7 +18,7 @@
   "scripts": {
     "build": "yarn clean && tsc",
     "clean": "del-cli build",
-    "copy:templates": "copyfiles \"stubs/**/*.stub\" build",
+    "copy:templates": "copyfiles \"stubs/**/*.stub\" --up=\"1\" build",
     "format": "prettier --write .",
     "lint": "eslint . --ext=.ts",
     "postbuild": "yarn copy:templates",
