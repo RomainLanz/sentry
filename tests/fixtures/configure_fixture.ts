@@ -38,4 +38,12 @@ export class ConfigureFixture extends BaseFixture {
   async thenConfigurationShouldBeCreated() {
     await this.getActiveTest().context.assert.fileExists('config/sentry.ts')
   }
+
+  async thenEnvironmentVariablesShouldBeAdded() {
+    await this.getActiveTest().context.assert.fileContains('.env', 'SENTRY_DSN')
+    await this.getActiveTest().context.assert.fileContains(
+      'start/env.ts',
+      'SENTRY_DSN: Env.schema.string()'
+    )
+  }
 }

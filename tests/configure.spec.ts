@@ -42,4 +42,12 @@ test.group('Configure', (group) => {
 
     await fixture.thenShouldRegisterMiddleware()
   })
+
+  test('should add environment variables', async () => {
+    await fixture.givenIHaveAnApplication()
+
+    await fixture.whenIRunConfigure()
+
+    await fixture.thenEnvironmentVariablesShouldBeAdded()
+  })
 })
