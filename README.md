@@ -125,8 +125,8 @@ export default defineConfig({
 })
 ```
 
-[gh-workflow-image]: https://img.shields.io/github/actions/workflow/status/rlanz/sentry/checks.yml?branch=main&style=for-the-badge
-[gh-workflow-url]: https://github.com/rlanz/sentry/actions/workflows/checks.yml
+[gh-workflow-image]: https://img.shields.io/github/actions/workflow/status/RomainLanz/sentry/checks.yml?branch=0.3&style=for-the-badge
+[gh-workflow-url]: https://github.com/RomainLanz/sentry/actions/workflows/checks.yml
 [npm-image]: https://img.shields.io/npm/v/@rlanz/sentry.svg?style=for-the-badge&logo=npm
 [npm-url]: https://www.npmjs.com/package/@rlanz/sentry
 [npm-download-image]: https://img.shields.io/npm/dm/@rlanz/sentry?style=for-the-badge
