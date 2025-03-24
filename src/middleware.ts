@@ -13,16 +13,13 @@ import type { NextFn } from '@adonisjs/core/types/http'
 
 export default class SentryMiddleware {
   async handle(ctx: HttpContext, next: NextFn) {
-    Sentry.setTag('url', ctx.request.url())
+    const activeSpan = Sentry.getActiveSpan()
+    const rootSpan = activeSpan && Sentry.getRootSpan(activeSpan)
 
-    await Sentry.startSpan(
-      {
-        name: ctx.routeKey || 'unknown',
-        op: 'http.server',
-      },
-      async () => {
-        await next()
-      }
-    )
+    if (rootSpan) {
+      Sentry.updateSpanName(rootSpan, ctx.routeKey || 'unknown')
+    }
+
+    return next()
   }
 }
