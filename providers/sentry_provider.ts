@@ -10,6 +10,9 @@ export default class SentryProvider {
 
     if (config.enabled) {
       Sentry.init(config)
+
+      await import('node:http')
+      await import('node:https')
     }
   }
 }
