@@ -823,18 +823,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@japa/file-system@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "@japa/file-system@npm:2.3.2"
+"@japa/file-system@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@japa/file-system@npm:3.0.0"
   dependencies:
-    "@paralleldrive/cuid2": "npm:^2.2.2"
-    "@poppinss/macroable": "npm:^1.0.4"
-    readdirp: "npm:^4.0.2"
+    "@poppinss/macroable": "npm:^1.1.0"
     slash: "npm:^5.1.0"
   peerDependencies:
     "@japa/assert": ^2.0.0 || ^3.0.0 || ^4.0.0
-    "@japa/runner": ^3.0.0 || ^4.0.0
-  checksum: 10c0/038933b178f8b72e1a909f38fddb0083cc69f560cd3c9a8b15d56935fd03756efd4cfff561e2e697653b70fac11fec50f6677abafa77fdf9a9a396d0a2fee0a4
+    "@japa/runner": ^3.0.0 || ^4.0.0 || ^5.0.0
+  checksum: 10c0/f8e366aa94c7266b0c8c4a43ecdb9937c2bc3013f6e6e16b6b888dc126ec02e63d5fa12751f235dbbb806d82ca9c91e3e86d6d553b657c92be96a2c8862b2a66
   languageName: node
   linkType: hard
 
@@ -1608,6 +1606,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@poppinss/macroable@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@poppinss/macroable@npm:1.1.0"
+  checksum: 10c0/fdf2f14bd56293bac78795cac9052530b0dcce535fe3c572766bc9d6524939ef587a7be4170e983f3aa7ee4e9402a5ea18d696d3b07c8d8b9b0fdece10751a0a
+  languageName: node
+  linkType: hard
+
 "@poppinss/matchit@npm:^3.1.2":
   version: 3.1.2
   resolution: "@poppinss/matchit@npm:3.1.2"
@@ -1721,7 +1726,7 @@ __metadata:
     "@adonisjs/prettier-config": "npm:^1.4.4"
     "@adonisjs/tsconfig": "npm:^1.4.0"
     "@japa/assert": "npm:^4.0.1"
-    "@japa/file-system": "npm:^2.3.2"
+    "@japa/file-system": "npm:^3.0.0"
     "@japa/runner": "npm:^4.2.0"
     "@poppinss/utils": "npm:^6.9.2"
     "@sentry/node": "npm:^9.8.0"
@@ -6119,13 +6124,6 @@ __metadata:
   version: 4.0.2
   resolution: "readdirp@npm:4.0.2"
   checksum: 10c0/a16ecd8ef3286dcd90648c3b103e3826db2b766cdb4a988752c43a83f683d01c7059158d623cbcd8bdfb39e65d302d285be2d208e7d9f34d022d912b929217dd
-  languageName: node
-  linkType: hard
-
-"readdirp@npm:^4.0.2":
-  version: 4.1.2
-  resolution: "readdirp@npm:4.1.2"
-  checksum: 10c0/60a14f7619dec48c9c850255cd523e2717001b0e179dc7037cfa0895da7b9e9ab07532d324bfb118d73a710887d1e35f79c495fa91582784493e085d18c72c62
   languageName: node
   linkType: hard
 

@@ -38,7 +38,7 @@
     "@adonisjs/prettier-config": "^1.4.4",
     "@adonisjs/tsconfig": "^1.4.0",
     "@japa/assert": "^4.0.1",
-    "@japa/file-system": "^2.3.2",
+    "@japa/file-system": "^3.0.0",
     "@japa/runner": "^4.2.0",
     "@swc/core": "1.11.13",
     "@types/node": "^20.17.22",
